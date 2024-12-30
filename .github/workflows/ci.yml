@@ -2,7 +2,7 @@ name: CI
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 17 * * *" # Runs at 00:00 (UTC+7).
 
 jobs:
   check:
@@ -20,6 +20,6 @@ jobs:
       - name: patches
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          branch: master
+          branch: main
           file_pattern: docs/patches.json
           commit_message: Update patches.json
